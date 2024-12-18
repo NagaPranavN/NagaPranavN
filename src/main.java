@@ -6,7 +6,7 @@ public class Main {
         // BirthdateCalculator SVGwriter = new BirthdateCalculator();
 
        
-        SVGwriter.();
+        SVGwriter.svgfunction();
     
     }
 }
