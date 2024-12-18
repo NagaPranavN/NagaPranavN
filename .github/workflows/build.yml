@@ -28,12 +28,12 @@ jobs:
       # Step 3: Compile the Java file
       - name: Compile Java Program
         run: |
-          javac -d . src/BirthdateCalculator.java  # Adjust this path based on where your Java file is
+          javac -d . src/main.java  # Adjust this path based on where your Java file is
 
       # Step 4: Run the Java Program
       - name: Run Java Program
         run: |
-          java src.BirthdateCalculator  # Run the main class, adjust the package path if necessary
+          java src.main  # Run the main class, adjust the package path if necessary
       # - name: commit
       #  run: |- 
       #    git add .github/workflows/java.yml
