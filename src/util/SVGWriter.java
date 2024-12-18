@@ -53,7 +53,7 @@ public class SVGWriter {
     }
 
    //Method to save the SVG document to a file
-    private static void saveSVGDocument(Document document, String filePath) {
+    public static void saveSVGDocument(Document document, String filePath) {
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
