@@ -27,15 +27,13 @@ public class SVGWriter {
         // Save the updated SVG to a new file
         saveUpdatedSVG(svgDocument, "bio1.svg");
     }
-
-    // Method to parse SVG
+    
     public static SVGDocument parseSVG(String svgFilePath) throws Exception {
         String parser = XMLResourceDescriptor.getXMLParserClassName();
         SAXSVGDocumentFactory factory = new SAXSVGDocumentFactory(parser);
         return (SVGDocument) factory.createDocument(new File(svgFilePath).toURI().toString());
     }
 
-    // Method to update SVG element
     public static void updateSVGElement(SVGDocument svgDocument, String elementId, String attributeName, String attributeValue) {
         Node node = svgDocument.getElementById(elementId);
         if (node != null && node instanceof Element) {
@@ -44,7 +42,6 @@ public class SVGWriter {
         }
     }
 
-    // Method to save updated SVG
     public static void saveUpdatedSVG(SVGDocument svgDocument, String outputFilePath) throws IOException {
         try (FileWriter fileWriter = new FileWriter(outputFilePath)) {
             Transformer transformer = TransformerFactory.newInstance().newTransformer();
