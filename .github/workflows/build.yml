@@ -28,7 +28,7 @@ jobs:
       # Step 3: Compile the Java file
       - name: Compile Java Program
         run: |
-          javac src/BirthdateCalculator.java  # Adjust this path based on where your Java file is
+          javac -d . src/BirthdateCalculator.java  # Adjust this path based on where your Java file is
 
       # Step 4: Run the Java Program
       - name: Run Java Program
