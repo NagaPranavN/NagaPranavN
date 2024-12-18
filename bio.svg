@@ -7,7 +7,7 @@
 .commentColor {fill: #8b949e;}
 text, tspan {white-space: pre;}
 </style>
- <rect width="970px" height="530px" fill="#161b22" rx="15"/>
+ <rect transform="translate(0.000000,600.000000)"  fill="#161b22" rx="15"/>
  <g x="15" y="30" fill="#c9d1d9"
 fill="#c9d1d9" stroke="none">
 <path d="M4404 5576 c-7 -27 11 -66 29 -65 9 0 9 2 0 6 -18 7 -16 23 2 23 16
