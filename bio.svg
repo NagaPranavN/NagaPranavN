@@ -9,7 +9,40 @@ text, tspan {white-space: pre;}
 </style>
  
 <rect width="970px" height="530px" fill="#161b22" rx="15"/>
-
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+  <text x="10" y="20" font-family="monospace" font-size="15" fill="black">
+    @@@@@@
+  </text>
+  <text x="10" y="40" font-family="monospace" font-size="15" fill="black">
+    %#############***#%
+  </text>
+  <text x="10" y="60" font-family="monospace" font-size="15" fill="black">
+    %#######%%%%###########**%
+  </text>
+  <text x="10" y="80" font-family="monospace" font-size="15" fill="black">
+    ###########%%###*#####%%%#####*
+  </text>
+  <text x="10" y="100" font-family="monospace" font-size="15" fill="black">
+    %*#######*####%%####*###%%@%%######%
+  </text>
+  <text x="10" y="120" font-family="monospace" font-size="15" fill="black">
+    #*###########*##############%%%%######%
+  </text>
+  <text x="10" y="140" font-family="monospace" font-size="15" fill="black">
+    #*#############**######%########%%%%#####%
+  </text>
+  <text x="10" y="160" font-family="monospace" font-size="15" fill="black">
+    @*##################**##############%%%%####
+  </text>
+  <text x="10" y="180" font-family="monospace" font-size="15" fill="black">
+    %*######################**############%%%####
+  </text>
+  <text x="10" y="200" font-family="monospace" font-size="15" fill="black">
+    *#################################%%%%#%%%####
+  </text>
+  <!-- Add more lines as needed -->
+</svg>
+<!--
 <text x="15" y="30" fill="#c9d1d9" class="ascii">
 <tspan x="15" y="30">           g@M%@%%@N%Nw,,                   </tspan>
 <tspan x="15" y="50">        ,M*|`||*%gNM=]mM%g||%N,             </tspan>
@@ -37,7 +70,7 @@ text, tspan {white-space: pre;}
 <tspan x="15" y="490">. ^['' %@@@@HH%b%k{illljkjj%%%% ; `,.      </tspan>
 <tspan x="15" y="510">=[' ` . %HH%%%%%H@gkilljjj%kk%&quot;.   `'i</tspan>
 </text>
- 
+ -->
 <text x="370" y="30" fill="#c9d1d9">
 <tspan x="370" y="30">Naga@Pranav</tspan>
 <tspan x="370" y="50">——————</tspan>
