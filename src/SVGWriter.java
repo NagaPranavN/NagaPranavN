@@ -11,7 +11,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 
 public class SVGWriter {
-    public static void main(String[] args) {
+    public void svgfunction() {
         try {
             // Create a new SVG document
             DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
