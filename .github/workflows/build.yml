@@ -12,13 +12,12 @@ jobs:
     runs-on: ubuntu-latest  # latest Ubuntu environment on GitHub's runners
 
     steps:
-      # Step 1: Checkout the code from the repository
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
           fetch-depth: 1
           
-      # Step 2: Set up Java JDK
+      
       - name: Set up JDK
         uses: actions/setup-java@v3
         with:
@@ -32,16 +31,14 @@ jobs:
           key: ${{ runner.os }}-maven-${{ hashFiles('**/src/pom.xml') }}
           restore-keys: |
             ${{ runner.os }}-maven-
-
-      # Step 3: Compile the Java file
+            
       - name: Compile Java Program
         run: |
-          javac Main.java  # Adjust this path based on where your Java file is
-
-      # Step 4: Run the Java Program
+          javac Main.java  
+  
       - name: Run Java Program
         run: |
-          java Main  # Run the main class, adjust the package path if necessary
+          java Main  
       # - name: commit
       #  run: |- 
       #    git add .github/workflows/java.yml
