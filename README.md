@@ -2,7 +2,7 @@
 
 <!-- Add a profile picture -->
 <div align="center">
-  <img src="https://via.placeholder.com/200" alt="Your Profile Picture" style="border-radius: 50%;" />
+  <img src="https://x.com/NagaPranavN/photo" alt="Your Profile Picture" style="border-radius: 50%;" />
 </div>
 
 <p align="center">
