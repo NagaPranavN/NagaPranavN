@@ -10,9 +10,12 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 
-public class SVGWriter {
-    public void svgfunction() {
+public class SVGOverwriteExample {
+    public static void main(String[] args) {
         try {
+            // Specify the path to the SVG file
+            String filePath = "output.svg";
+
             // Create a new SVG document
             DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
             DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
@@ -21,19 +24,19 @@ public class SVGWriter {
             // Add root SVG element
             Element svgRoot = document.createElement("svg");
             svgRoot.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-            svgRoot.setAttribute("width", "200");
+            svgRoot.setAttribute("width", "400");
             svgRoot.setAttribute("height", "200");
             document.appendChild(svgRoot);
 
-            // Add a rectangle
+            // Add a rectangle element
             Element rect = document.createElement("rect");
-            rect.setAttribute("x", "10");
-            rect.setAttribute("y", "10");
-            rect.setAttribute("width", "100");
+            rect.setAttribute("x", "50");
+            rect.setAttribute("y", "50");
+            rect.setAttribute("width", "300");
             rect.setAttribute("height", "100");
-            rect.setAttribute("fill", "red");
+            rect.setAttribute("fill", "blue");
             svgRoot.appendChild(rect);
-
+             
             // Add some text
             Element text = document.createElement("text");
             text.setAttribute("x", "50");
@@ -42,28 +45,29 @@ public class SVGWriter {
             text.setAttribute("fill", "black");
             text.setTextContent("Hello, SVG!");
             svgRoot.appendChild(text);
+            // Overwrite the SVG file
+            overwriteSVGFile(document, filePath);
 
-            // Write the SVG document to a file
-            saveSVGDocument(document, "bio.svg");
+            System.out.println("SVG file overwritten successfully!");
 
-            System.out.println("SVG file created successfully!");
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 
-   //Method to save the SVG document to a file
-    public static void saveSVGDocument(Document document, String filePath) {
+    // Method to overwrite an SVG file
+    private static void overwriteSVGFile(Document document, String filePath) {
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
             Transformer transformer = transformerFactory.newTransformer();
-            DOMSource domSource = new DOMSource(document);
-            StreamResult streamResult = new StreamResult(new File(filePath));
-            transformer.transform(domSource, streamResult);
+            DOMSource source = new DOMSource(document);
+            StreamResult result = new StreamResult(new File(filePath));
+
+            // Transform and write the document to the file
+            transformer.transform(source, result);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
 }
-
-
+           
