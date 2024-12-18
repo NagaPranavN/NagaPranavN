@@ -1,4 +1,4 @@
-# <div align="center">Hi, I'm [Your Name] 👋</div>
+# <div align="center">Hi, I'm Pranav </div>
 
 <!-- Add a profile picture -->
 <div align="center">
