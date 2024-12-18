@@ -52,7 +52,7 @@ public class SVGWriter {
         }
     }
 
-    // Method to save the SVG document to a file
+   /*  Method to save the SVG document to a file
     private static void saveSVGDocument(Document document, String filePath) {
         try {
             TransformerFactory transformerFactory = TransformerFactory.newInstance();
@@ -63,6 +63,6 @@ public class SVGWriter {
         } catch (Exception e) {
             e.printStackTrace();
         }
-    }
+    }*/
 }
 
