@@ -10,8 +10,8 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 
-public class SVGOverwriteExample {
-    public static void main(String[] args) {
+public class SVGWriter{
+    public {
         try {
             // Specify the path to the SVG file
             String filePath = "output.svg";
