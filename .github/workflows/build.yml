@@ -4,10 +4,9 @@ on:
   push:
     branches:
       - main  # Trigger the workflow on pushes to the main branch
-  pull_request:
-    branches:
-      - main  # Trigger the workflow on pull requests targeting the main branch
-
+  schedule:
+    - cron: "0 4 * * *"
+    
 jobs:
   build:
     runs-on: ubuntu-latest  # Use the latest Ubuntu environment on GitHub's runners
@@ -32,4 +31,8 @@ jobs:
       - name: Run Java Program
         run: |
           java src.BirthdateCalculator  # Run the main class, adjust the package path if necessary
-
+      - name: commit
+       run: | 
+          git add .github/workflows/java.yml
+          git commit -m "Add GitHub Actions workflow to build and run Java program"
+          git push origin main
