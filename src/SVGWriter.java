@@ -11,7 +11,7 @@ import javax.xml.transform.stream.StreamResult;
 import java.io.File;
 
 public class SVGWriter{
-    public {
+    public void svgfunction() {
         try {
             // Specify the path to the SVG file
             String filePath = "output.svg";
