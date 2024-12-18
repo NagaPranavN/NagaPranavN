@@ -34,8 +34,8 @@ jobs:
       - name: Run Java Program
         run: |
           java src.BirthdateCalculator  # Run the main class, adjust the package path if necessary
-      - name: commit
-        run: |- 
-          git add .github/workflows/java.yml
-          git commit -m "Add GitHub Actions workflow to build and run Java program"
-          git push origin main
+      # - name: commit
+      #  run: |- 
+      #    git add .github/workflows/java.yml
+      #    git commit -m "Add GitHub Actions workflow to build and run Java program"
+      #    git push origin main
