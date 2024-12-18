@@ -3,7 +3,7 @@ import java.time.LocalDate;
 import java.time.Period;
 
 public class BirthdateCalculator {
-    public static void main(String[] args) {
+    public void agecalculator() {
         LocalDate birthDate = LocalDate.of(2006, 8, 11);  // Example birthdate
         LocalDate today = LocalDate.now();
         Period period = Period.between(birthDate, today);
