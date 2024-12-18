@@ -1,4 +1,4 @@
-import src.util.SVGWriter;
+import src.SVGWriter;
 
 public class Main {
     public static void main(String[] args) {
