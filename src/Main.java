@@ -1,9 +1,9 @@
-import src.util.SVGwriter;
+import src.util.SVGWriter;
 
 public class Main {
     public static void main(String[] args) {
       
-        SVGwriter SVGwriter = new SVGwriter();
+        SVGWriter SVGwriter = new SVGWriter();
         // BirthdateCalculator SVGwriter = new BirthdateCalculator();
 
        
