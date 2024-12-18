@@ -14,17 +14,12 @@ import java.io.IOException;
 public class SVGWriter {
 
     public void svgfunction() throws Exception {
-        // Path to your SVG file
         String svgFilePath = "bio.svg";
-
-        // Parse the SVG file
         SVGDocument svgDocument = parseSVG(svgFilePath);
 
-        // Example: Update a specific element (e.g., <rect>) by its ID
         updateSVGElement(svgDocument, "myRect", "width", "200");
         updateSVGElement(svgDocument, "myRect", "height", "150");
 
-        // Save the updated SVG to a new file
         saveUpdatedSVG(svgDocument, "bio1.svg");
     }
     
