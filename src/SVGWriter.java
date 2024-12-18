@@ -1,73 +1,56 @@
 package src;
-import org.w3c.dom.Document;
+import org.apache.batik.dom.svg.SAXSVGDocumentFactory;
+import org.apache.batik.util.XMLResourceDescriptor;
 import org.w3c.dom.Element;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
+import org.w3c.dom.Node;
+import org.w3c.dom.svg.SVGDocument;
 import javax.xml.transform.Transformer;
 import javax.xml.transform.TransformerFactory;
-import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 
-public class SVGWriter{
-    public void svgfunction() {
-        try {
-            // Specify the path to the SVG file
-            String filePath = "output.svg";
+public class SVGWriter {
 
-            // Create a new SVG document
-            DocumentBuilderFactory documentFactory = DocumentBuilderFactory.newInstance();
-            DocumentBuilder documentBuilder = documentFactory.newDocumentBuilder();
-            Document document = documentBuilder.newDocument();
+    public void svgfunction() throws Exception {
+        // Path to your SVG file
+        String svgFilePath = "bio.svg";
 
-            // Add root SVG element
-            Element svgRoot = document.createElement("svg");
-            svgRoot.setAttribute("xmlns", "http://www.w3.org/2000/svg");
-            svgRoot.setAttribute("width", "400");
-            svgRoot.setAttribute("height", "200");
-            document.appendChild(svgRoot);
+        // Parse the SVG file
+        SVGDocument svgDocument = parseSVG(svgFilePath);
 
-            // Add a rectangle element
-            Element rect = document.createElement("rect");
-            rect.setAttribute("x", "50");
-            rect.setAttribute("y", "50");
-            rect.setAttribute("width", "300");
-            rect.setAttribute("height", "100");
-            rect.setAttribute("fill", "blue");
-            svgRoot.appendChild(rect);
-             
-            // Add some text
-            Element text = document.createElement("text");
-            text.setAttribute("x", "50");
-            text.setAttribute("y", "150");
-            text.setAttribute("font-size", "20");
-            text.setAttribute("fill", "black");
-            text.setTextContent("Hello, SVG!");
-            svgRoot.appendChild(text);
-            // Overwrite the SVG file
-            overwriteSVGFile(document, filePath);
+        // Example: Update a specific element (e.g., <rect>) by its ID
+        updateSVGElement(svgDocument, "myRect", "width", "200");
+        updateSVGElement(svgDocument, "myRect", "height", "150");
 
-            System.out.println("SVG file overwritten successfully!");
+        // Save the updated SVG to a new file
+        saveUpdatedSVG(svgDocument, "bio1.svg");
+    }
 
-        } catch (Exception e) {
-            e.printStackTrace();
+    // Method to parse SVG
+    public static SVGDocument parseSVG(String svgFilePath) throws Exception {
+        String parser = XMLResourceDescriptor.getXMLParserClassName();
+        SAXSVGDocumentFactory factory = new SAXSVGDocumentFactory(parser);
+        return (SVGDocument) factory.createDocument(new File(svgFilePath).toURI().toString());
+    }
+
+    // Method to update SVG element
+    public static void updateSVGElement(SVGDocument svgDocument, String elementId, String attributeName, String attributeValue) {
+        Node node = svgDocument.getElementById(elementId);
+        if (node != null && node instanceof Element) {
+            Element element = (Element) node;
+            element.setAttribute(attributeName, attributeValue);
         }
     }
 
-    // Method to overwrite an SVG file
-    private static void overwriteSVGFile(Document document, String filePath) {
-        try {
-            TransformerFactory transformerFactory = TransformerFactory.newInstance();
-            Transformer transformer = transformerFactory.newTransformer();
-            DOMSource source = new DOMSource(document);
-            StreamResult result = new StreamResult(new File(filePath));
-
-            // Transform and write the document to the file
-            transformer.transform(source, result);
+    // Method to save updated SVG
+    public static void saveUpdatedSVG(SVGDocument svgDocument, String outputFilePath) throws IOException {
+        try (FileWriter fileWriter = new FileWriter(outputFilePath)) {
+            Transformer transformer = TransformerFactory.newInstance().newTransformer();
+            transformer.transform(new javax.xml.transform.dom.DOMSource(svgDocument), new StreamResult(fileWriter));
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new IOException("Error saving the updated SVG file", e);
         }
     }
 }
-           
