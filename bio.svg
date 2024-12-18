@@ -46,7 +46,7 @@ text, tspan {white-space: pre;}
 <tspan x="372" y="130" class="keyColor">Contact</tspan>:
 <tspan x="370" y="150">——————</tspan>
 <tspan x="370" y="170" class="keyColor">Email</tspan>: <tspan class="valueColor">nagapranav@icloud.com</tspan>
-<tspan x="370" y="190" class="keyColor">Instagram</tspan>: therealnagapranav <tspan class="valueColor"></tspan>
+<tspan x="370" y="190" class="keyColor">Instagram</tspan>:  <tspan class="valueColor">therealnagapranav</tspan>
 <tspan x="370" y="230" class="keyColor">GitHub Stats</tspan>:
 <tspan x="370" y="250">——————</tspan>
 <tspan x="370" y="270" class="keyColor">Repos</tspan>: <tspan class="valueColor">95</tspan> {<tspan class="keyColor">Contributed</tspan>: <tspan class="valueColor">133</tspan>}  | <tspan class="keyColor">Commmits</tspan>: <tspan class="valueColor">2,106  </tspan>| <tspan class="keyColor">Stars</tspan>: <tspan class="valueColor">295</tspan>
